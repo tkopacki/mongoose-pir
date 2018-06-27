@@ -1,3 +1,4 @@
+load('api_config.js');
 load('api_mqtt.js');
 load('api_timer.js');
 
