@@ -7,7 +7,6 @@ let previous = -1;
 
 function init() {
     GPIO.set_mode(Cfg.get('pir.pin'), GPIO.MODE_INPUT);
-    GPIO.set_mode(Cfg.get('pir.led'), GPIO.MODE_OUTPUT);
     Timer.set(1000 * 1, Timer.REPEAT, function () {
         let current = GPIO.read(Cfg.get('pir.pin'));
         if (current !== previous) {
@@ -17,11 +16,10 @@ function init() {
         } else {
             print("No change on state observed(", current, ")");
         }
-        GPIO.write(Cfg.get('pir.led'), current);
+        MQTT.pub(Cfg.get('pir.topic'), JSON.stringify(current), 1, false);
     }, null);
 }
 
-MQTT.pub(Cfg.get('pir.topic'), "Hello !", 1, false);
 print("Init");
 init();
 print("Init done");
