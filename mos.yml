@@ -9,7 +9,7 @@ filesystem:
 config_schema:
   - ["pir", "o", {title: "Motion sensor configuration"}]
   - ["pir.topic", "s", "relay/channel1", {title: "Topic for motion sensor"}]
-  - ["pir.pin", "i", "5", {title: "Pin for motion sensor"}]
+  - ["pir.pin", "i", 5, {title: "Pin for motion sensor"}]
   
 libs:
   - origin: https://github.com/mongoose-os-libs/mjs
