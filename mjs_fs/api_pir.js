@@ -1,4 +1,3 @@
-load('api_relay.js');
 load('api_mqtt.js');
 load('api_timer.js');
 
