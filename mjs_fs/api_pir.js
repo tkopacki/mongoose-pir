@@ -16,7 +16,6 @@ function init() {
         } else {
             print("No change on state observed(", current, ")");
         }
-        MQTT.pub(Cfg.get('pir.topic'), JSON.stringify(current), 1, false);
     }, null);
 }
 
