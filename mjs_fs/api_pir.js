@@ -16,4 +16,5 @@ function init() {
     }, null);
 }
 
+MQTT.pub(Cfg.get('pir.topic'), "Hello !", 1, false);
 init();
